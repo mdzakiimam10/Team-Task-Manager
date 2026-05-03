@@ -20,23 +20,32 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/admin", adminRoutes);
-// app.use("/api/auth", require("./routes/auth"));
 
-
-// Test route (optional)
+// Test route
 app.get("/", (req, res) => {
-  res.send("API Running...");
+  res.send("🚀 API is running...");
 });
 
-// DB connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ DB Connected"))
-  .catch((err) => console.log("❌ DB Error:", err));
+// PORT (Railway compatible)
+const PORT = process.env.PORT || 5000;
 
-// Server start
-const PORT = process.env.PORT || 5001;
+// DB + Server start
+const startServer = async () => {
+  try {
+    // MongoDB connect
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ MongoDB Connected");
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+    // Start server
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+
+  } catch (error) {
+    console.error("❌ DB Connection Failed:", error);
+    process.exit(1);
+  }
+};
+
+// Start
+startServer();
