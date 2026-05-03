@@ -3,49 +3,41 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-// Routes import
-const authRoutes = require("./routes/auth");
-const taskRoutes = require("./routes/task");
-const projectRoutes = require("./routes/project");
-const adminRoutes = require("./routes/admin");
-
 const app = express();
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/tasks", taskRoutes);
-app.use("/api/projects", projectRoutes);
-app.use("/api/admin", adminRoutes);
-
-// Test route
+// 🔥 IMPORTANT: Root test route
 app.get("/", (req, res) => {
-  res.send("🚀 API is running...");
+  res.status(200).send("🚀 Backend is LIVE");
 });
 
-// PORT (Railway compatible)
+// Routes
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/tasks", require("./routes/task"));
+app.use("/api/projects", require("./routes/project"));
+app.use("/api/admin", require("./routes/admin"));
+
+// ❗ Catch all route (IMPORTANT)
+app.use("*", (req, res) => {
+  res.status(404).send("Route not found");
+});
+
+// Port
 const PORT = process.env.PORT || 5000;
 
-// DB + Server start
-const startServer = async () => {
-  try {
-    // MongoDB connect
-    await mongoose.connect(process.env.MONGO_URI);
+// Start server
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
     console.log("✅ MongoDB Connected");
 
-    // Start server
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
-
-  } catch (error) {
-    console.error("❌ DB Connection Failed:", error);
-    process.exit(1);
-  }
-};
-
-// Start
-startServer();
+  })
+  .catch((err) => {
+    console.error("❌ DB Error:", err);
+  });
