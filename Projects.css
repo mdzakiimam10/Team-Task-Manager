@@ -1,0 +1,95 @@
+.projects-container {
+  padding: 25px;
+}
+
+/* TITLE */
+.projects-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* INPUT */
+.project-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.project-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: 0.2s;
+}
+
+.project-form input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.2);
+}
+
+.project-form button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project-form button:hover {
+  transform: scale(1.05);
+}
+
+/* GRID */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+.project-card {
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* NAME */
+.project-name {
+  font-weight: 500;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 40px;
+}

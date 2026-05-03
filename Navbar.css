@@ -1,0 +1,60 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Active tab (optional but useful) */
+.nav-links a.active {
+  background: white;
+  color: #4f46e5;
+}
+
+/* Logout button */
+.logout-btn {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
