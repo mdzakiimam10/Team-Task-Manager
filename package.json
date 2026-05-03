@@ -1,24 +1,14 @@
 {
   "name": "team-task-manager",
   "version": "1.0.0",
-  "description": "Team Task Manager Backend",
-<<<<<<< HEAD
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js"
-=======
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
->>>>>>> cc8dd97e234922c6982b4855c0668d271504ddd0
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.5",
-    "dotenv": "^17.4.2",
     "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^9.6.1",
-    "validator": "^13.15.35"
+    "mongoose": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0"
   }
 }
