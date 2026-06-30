@@ -12,7 +12,7 @@ Team Task Manager is a web application for teams to manage their tasks. Users ca
 - Secure APIs
 
 ## Tech Stack
-- Frontend: HTML, CSS, JavaScript, React
+- Frontend: HTML, CSS, JavaScript, React.js
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Authentication: JWT
