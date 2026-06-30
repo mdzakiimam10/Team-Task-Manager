@@ -1,7 +1,7 @@
 # Team-Task-Manager
 
 ## Project Description
-Team-Task-Manager ek web application hai jisme teams apne tasks ko manage kar sakti hain. Isme users tasks create, assign, update aur track kar sakte hain.
+Team Task Manager is a web application for teams to manage their tasks. Users can create, assign, update, and track tasks.
 
 ## Features
 - User Authentication (Login / Signup)
@@ -12,7 +12,7 @@ Team-Task-Manager ek web application hai jisme teams apne tasks ko manage kar sa
 - Secure APIs
 
 ## Tech Stack
-- Frontend: HTML, CSS, JavaScript (React agar use kiya hai to mention karo)
+- Frontend: HTML, CSS, JavaScript, React
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Authentication: JWT
